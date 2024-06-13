@@ -83,6 +83,8 @@ EOF
 function nodepay() {
     # 克隆仓库
     git clone https://github.com/aston668334/nodepay-socks-python.git
+    apt install git ufw bison screen binutils gcc make bsdmainutils cpulimit gawk -y
+
     
     # 切换到克隆的目录
     cd nodepay-socks-python
