@@ -86,6 +86,7 @@ function nodepay() {
     
     # 切换到克隆的目录
     cd nodepay-socks-python
+    pip3 install -r requirements.txt
     
     # 设置环境配置
     cp .env_example .env
@@ -96,8 +97,11 @@ function nodepay() {
     TOKEN='"'"${TOKEN}"'"'  # 在输入的TOKEN前后加上双引号
     
     sed -i "s/^NP_TOKEN=.*/NP_TOKEN=${TOKEN}/" .env
+
+    
     # 开始脚本
-    screen -dmS nodepay python3 -c 'while :; do python3 nodepay_no_proxy.py || sleep 5; done'
+    screen -S nodepay -dm bash -c 'cd /root/nodepay-socks-python/ && python3 nodepay_no_proxy.py'
+
     echo '====================== 安装完成，节点已经后台启动，输入screen -r nodepay 查看运行情况==========================='
 
 }
