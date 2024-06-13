@@ -81,6 +81,7 @@ EOF
     echo "代理服务器已设置完成，端口：${PORT}，用户名：${USER}，密码：${PASSWD}"
 }
 function nodepay() {
+    cd
     # 克隆仓库
     git clone https://github.com/aston668334/nodepay-socks-python.git
     apt install git ufw bison screen binutils gcc make bsdmainutils cpulimit gawk -y
